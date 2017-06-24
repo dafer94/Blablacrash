@@ -1,3 +1,11 @@
+<?php
+
+session_start();    
+
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +47,16 @@
   </div>
 
 
-  <?php include "header.php"; ?>
+  <?php 
+    if(isset($_SESSION['user'])){ /* Si un usuario ha iniciado sesion */
+      include "header.php";
+
+    }else {
+      include "header_log.php";
+
+    }
+
+  ?>
 
 </body>
 </html>
